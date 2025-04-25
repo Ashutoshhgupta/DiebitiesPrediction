@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction App</title>
+</head>
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+    <h1>Diabetes Prediction</h1>
+
+    <form action="/predict" method="post">
+        <p>Age: <input type="number" step="any" name="age" required></p>
+        <p>BMI: <input type="number" step="any" name="bmi" required></p>
+        <p>Blood Glucose Level: <input type="number" step="any" name="blood_glucose_level" required></p>
+        <p>HbA1c Level: <input type="number" step="any" name="HbA1c_level" required></p>
+        <p><button type="submit">Predict</button></p>
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    <p style="font-size: 18px;">{{ confidence_text }}</p>
+    {% endif %}
+
+</body>
+</html>
